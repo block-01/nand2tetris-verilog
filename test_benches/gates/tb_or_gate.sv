@@ -13,27 +13,48 @@ module tb_or_gate();
 
     initial begin
 
-        $dumpfile("or-waveform.vcd");
+        $dumpfile("build/gates/waveforms/or-waveform.vcd");
+        $dumpvars(0, tb_or_gate);
 
         a = 0;
         b = 0;
-        $dumpvars(0, tb_or_gate);
         #10
+        if (out == 0) begin
+            $display("or(0,0) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         a = 1;
         b = 1;
-        $dumpvars(0, tb_or_gate);
         #10
+        if (out == 1) begin
+            $display("or(1,1) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         a = 1;
         b = 0;
-        $dumpvars(0, tb_or_gate);
         #10
+        if (out == 1) begin
+            $display("or(1,0) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         a = 0;
         b = 1;
-        $dumpvars(0, tb_or_gate);
         #10
+        if (out == 1) begin
+            $display("or(0,1) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         $finish();
     end
