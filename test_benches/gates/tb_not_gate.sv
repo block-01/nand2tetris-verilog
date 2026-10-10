@@ -6,15 +6,26 @@ module tb_not_gate ();
     not_gate uut(in,out);
 
     initial begin
-        $dumpfile("not-waveform.vcd");
+        $dumpfile("build/gates/waveforms/not-waveform.vcd");
+        $dumpvars(0, tb_not_gate);
 
         in = 0;
-        $dumpvars(0, tb_not_gate);
         #10
+        if (out == 1) begin
+            $display("not(0) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         in = 1;
-        $dumpvars(0, tb_not_gate);
         #10
+        if (out == 0) begin
+            $display("not(1) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         $finish();
     end
