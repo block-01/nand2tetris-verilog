@@ -35,3 +35,8 @@ echo ""
 echo "Testing MUX gate:"
 iverilog  -D GENERATE_VCD -o build/gates/mux hack/gates/not_gate.sv hack/gates/and_gate.sv hack/gates/or_gate.sv hack/gates/mux_gate.sv test_benches/gates/tb_mux_gate.sv
 vvp build/gates/mux
+
+echo ""
+echo "Testing DEMUX gate:"
+iverilog  -D GENERATE_VCD -o build/gates/demux hack/gates/not_gate.sv hack/gates/and_gate.sv hack/gates/or_gate.sv hack/gates/demux_gate.sv test_benches/gates/tb_demux_gate.sv
+vvp build/gates/demux
