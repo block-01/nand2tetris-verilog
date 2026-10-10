@@ -1,8 +1,8 @@
-`include "hack/gates/and_gate.v"
-`include "hack/gates/not_gate.v"
+`include "hack/gates/and_gate.sv"
+`include "hack/gates/not_gate.sv"
 
-`ifndef nand_gate_v
-`define nand_gate_v
+`ifndef nand_gate_sv
+`define nand_gate_sv
 module nand_gate(
     input wire a,      // Input wire A
     input wire b,      // Input wire B

@@ -1,9 +1,9 @@
-`include "hack/gates/and_gate.v"
-`include "hack/gates/not_gate.v"
-`include "hack/gates/or_gate.v"
+`include "hack/gates/and_gate.sv"
+`include "hack/gates/not_gate.sv"
+`include "hack/gates/or_gate.sv"
 
-`ifndef mux_gate_v
-`define mux_gate_v
+`ifndef mux_gate_sv
+`define mux_gate_sv
 module mux_gate(
     input wire a,           // Input wire for A.
     input wire b,           // Input wire for B.
