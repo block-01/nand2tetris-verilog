@@ -1,6 +1,8 @@
 # Nand2Tetris in Verilog
 
-This repository contains my adventures (and possible miss-adventures) with going through [Nand2Tetris](https://www.nand2tetris.org/) but instead of the provided HDL and tools instead using verilog with the intention of running it on an FPGA.
+This repository contains my adventures (and possible miss-adventures) with going through [Nand2Tetris](https://www.nand2tetris.org/) but instead of using the provided HDL and tools I instead decided to use verilog with the intention of running it on an FPGA.
+
+This all results (hopefully) in a fully working CPU bit that uses the HACK Architecture.
 
 ## Why?
 
