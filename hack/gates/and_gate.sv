@@ -1,11 +1,11 @@
-`ifndef and_gate_v
-`define and_gate_v
+`ifndef and_gate_sv
+`define and_gate_sv
 module and_gate(
     input wire a,      // Input wire A
     input wire b,      // Input wire B
 
-    output wire out    // Output ^wire
-    );
+    output wire out    // Output wire of A^B
+);
 
     assign  out = a&b;
 
