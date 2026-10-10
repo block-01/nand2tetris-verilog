@@ -1,5 +1,5 @@
-`ifndef or_gate_v
-`define or_gate_v
+`ifndef or_gate_sv
+`define or_gate_sv
 module or_gate(
     input wire a,       // Input wire of A.
     input wire b,       // Input wire of B.

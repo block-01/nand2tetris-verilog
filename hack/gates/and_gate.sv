@@ -1,5 +1,5 @@
-`ifndef and_gate_v
-`define and_gate_v
+`ifndef and_gate_sv
+`define and_gate_sv
 module and_gate(
     input wire a,      // Input wire A
     input wire b,      // Input wire B

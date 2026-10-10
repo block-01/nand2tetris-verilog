@@ -17,23 +17,43 @@ module tb_xor_gate();
 
         a = 0;
         b = 0;
-        $dumpvars(0, tb_xor_gate);
         #10
+        if (out == 0) begin
+            $display("xor(0,0) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         a = 1;
         b = 1;
-        $dumpvars(0, tb_xor_gate);
         #10
+        if (out == 0) begin
+            $display("xor(1,1) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         a = 1;
         b = 0;
-        $dumpvars(0, tb_xor_gate);
         #10
+        if (out == 1) begin
+            $display("xor(1,0) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         a = 0;
         b = 1;
-        $dumpvars(0, tb_xor_gate);
         #10
+        if (out == 1) begin
+            $display("xor(0,1) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         $finish();
     end

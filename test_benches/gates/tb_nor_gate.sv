@@ -1,5 +1,5 @@
-`include "hack/gates/or_gate.v"
-`include "hack/gates/not_gate.v"
+`include "hack/gates/or_gate.sv"
+`include "hack/gates/not_gate.sv"
 
 module tb_nor_gate();
 
@@ -19,20 +19,40 @@ module tb_nor_gate();
         $dumpfile("nor-waveform.vcd");
 
         a = 0; b = 0;
-        $dumpvars(0, tb_nor_gate);
         #10
-        
+        if (out == 1) begin
+            $display("nor(0,0) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
+
         a = 0; b = 1;
-        $dumpvars(0, tb_nor_gate);
         #10
+        if (out == 0) begin
+            $display("nor(0,1) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         a = 1; b = 0;
-        $dumpvars(0, tb_nor_gate);
         #10
+        if (out == 0) begin
+            $display("nor(1,0) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         a = 1; b = 1;
-        $dumpvars(0, tb_nor_gate);
         #10
+            if (out == 0) begin
+            $display("nor(1,1) Test Passes!");
+        end
+        else begin
+            $error("Test Failed!");
+        end
 
         $finish();
     end
