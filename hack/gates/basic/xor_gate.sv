@@ -1,6 +1,6 @@
-`include "hack/gates/not_gate.sv"
-`include "hack/gates/and_gate.sv"
-`include "hack/gates/or_gate.sv"
+`include "hack/gates/basic/not_gate.sv"
+`include "hack/gates/basic/and_gate.sv"
+`include "hack/gates/basic/or_gate.sv"
 
 `ifndef xor_gate_sv
 `define xor_gate_sv

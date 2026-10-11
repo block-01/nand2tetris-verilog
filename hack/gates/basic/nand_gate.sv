@@ -1,5 +1,5 @@
-`include "hack/gates/and_gate.sv"
-`include "hack/gates/not_gate.sv"
+`include "hack/gates/basic/and_gate.sv"
+`include "hack/gates/basic/not_gate.sv"
 
 `ifndef nand_gate_sv
 `define nand_gate_sv
