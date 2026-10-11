@@ -4,7 +4,9 @@ mkdir build/gates \
 build/gates/basic \
 build/gates/basic/waveforms \
 build/gates/16-bit \
-build/gates/16-bit/waveforms
+build/gates/16-bit/waveforms \
+build/gates/multi-way \
+build/gates/multi-way/waveforms
 
 echo "-----------"
 echo "Basic Gates"
@@ -94,3 +96,33 @@ echo ""
 echo "Testing 16-bit DEMUX gate:"
 iverilog  -D GENERATE_VCD -o build/gates/16-bit/demux16 hack/gates/basic/not_gate.sv hack/gates/basic/and_gate.sv hack/gates/basic/or_gate.sv hack/gates/basic/demux_gate.sv hack/gates/16-bit/demux16_gate.sv test_benches/gates/16-bit/tb_demux16_gate.sv
 vvp build/gates/16-bit/demux16
+
+echo ""
+echo "----------------"
+echo "Multi-way Gates:"
+echo "----------------"
+
+echo ""
+echo "Testing 16-bit 4-way MUX gate:"
+iverilog  -D GENERATE_VCD -o build/gates/multi-way/mux16_4way hack/gates/basic/not_gate.sv hack/gates/basic/and_gate.sv hack/gates/basic/or_gate.sv hack/gates/basic/mux_gate.sv hack/gates/16-bit/mux16_gate.sv hack/gates/multi-way/mux16_4way_gate.sv test_benches/gates/multi-way/tb_mux16_4way_gate.sv
+vvp build/gates/multi-way/mux16_4way
+
+echo ""
+echo "Testing 16-bit 8-way MUX gate:"
+iverilog  -D GENERATE_VCD -o build/gates/multi-way/mux16_8way hack/gates/basic/not_gate.sv hack/gates/basic/and_gate.sv hack/gates/basic/or_gate.sv hack/gates/basic/mux_gate.sv hack/gates/16-bit/mux16_gate.sv hack/gates/multi-way/mux16_4way_gate.sv hack/gates/multi-way/mux16_8way_gate.sv test_benches/gates/multi-way/tb_mux16_8way_gate.sv
+vvp build/gates/multi-way/mux16_8way
+
+echo ""
+echo "Testing 4-way DEMUX gate:"
+iverilog  -D GENERATE_VCD -o build/gates/multi-way/demux_4way hack/gates/basic/and_gate.sv hack/gates/basic/not_gate.sv hack/gates/basic/or_gate.sv hack/gates/basic/demux_gate.sv hack/gates/multi-way/demux_4way_gate.sv test_benches/gates/multi-way/tb_demux_4way_gate.sv 
+vvp build/gates/multi-way/demux_4way
+
+echo ""
+echo "Testing 8-way DEMUX gate:"
+iverilog  -D GENERATE_VCD -o build/gates/multi-way/demux_8way hack/gates/basic/and_gate.sv hack/gates/basic/not_gate.sv hack/gates/basic/or_gate.sv hack/gates/basic/demux_gate.sv hack/gates/multi-way/demux_4way_gate.sv hack/gates/multi-way/demux_8way_gate.sv test_benches/gates/multi-way/tb_demux_8way_gate.sv
+vvp build/gates/multi-way/demux_8way
+
+echo ""
+echo "Testing 8-way OR gate:"
+iverilog  -D GENERATE_VCD -o build/gates/multi-way/or8way hack/gates/basic/or_gate.sv hack/gates/multi-way/or8way_gate.sv test_benches/gates/multi-way/tb_or8way_gate.sv
+vvp build/gates/multi-way/or8way
