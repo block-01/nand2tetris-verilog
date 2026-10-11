@@ -1,9 +1,9 @@
-`include "hack/gates/not_gate.v"
-`include "hack/gates/and_gate.v"
-`include "hack/gates/or_gate.v"
+`include "hack/gates/basic/not_gate.sv"
+`include "hack/gates/basic/and_gate.sv"
+`include "hack/gates/basic/or_gate.sv"
 
-`ifndef xor_gate_v
-`define xor_gate_v
+`ifndef xor_gate_sv
+`define xor_gate_sv
 module xor_gate(
     input wire a,       // Input wire A.
     input wire b,       // Input wire B.
