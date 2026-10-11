@@ -1,5 +1,5 @@
-`include "hack/gates/or_gate.sv"
-`include "hack/gates/not_gate.sv"
+`include "hack/gates/basic/or_gate.sv"
+`include "hack/gates/basic/not_gate.sv"
 
 `ifndef nor_gate_sv
 `define nor_gate_sv

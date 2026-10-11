@@ -1,6 +1,3 @@
-`include "hack/gates/or_gate.sv"
-`include "hack/gates/not_gate.sv"
-
 module tb_nor_gate();
 
     reg a;
@@ -16,7 +13,7 @@ module tb_nor_gate();
     );
 
     initial begin
-        $dumpfile("build/gates/waveforms/nor-waveform.vcd");
+        $dumpfile("build/gates/basic/waveforms/nor-waveform.vcd");
         $dumpvars(0, tb_nor_gate);
 
         a = 0; b = 0;

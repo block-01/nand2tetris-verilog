@@ -6,7 +6,7 @@ module tb_not_gate ();
     not_gate uut(in,out);
 
     initial begin
-        $dumpfile("build/gates/waveforms/not-waveform.vcd");
+        $dumpfile("build/gates/basic/waveforms/not-waveform.vcd");
         $dumpvars(0, tb_not_gate);
 
         in = 0;
