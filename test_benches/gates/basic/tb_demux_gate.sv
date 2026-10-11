@@ -1,5 +1,5 @@
 module tb_demux_gate();
-
+    
     reg in;
     reg select;
 
@@ -14,7 +14,7 @@ module tb_demux_gate();
     );
 
     initial begin
-        $dumpfile("build/gates/waveforms/demux-waveform.vcd");
+        $dumpfile("build/gates/basic/waveforms/demux-waveform.vcd");
         $dumpvars(0, tb_demux_gate);
 
         in = 0; select = 0;

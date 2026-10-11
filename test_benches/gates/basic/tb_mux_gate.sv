@@ -15,7 +15,7 @@ module tb_mux_gate();
     );
 
     initial begin
-        $dumpfile("build/gates/waveforms/mux-waveform.vcd");
+        $dumpfile("build/gates/basic/waveforms/mux-waveform.vcd");
         $dumpvars(0, tb_mux_gate);
 
         a = 0; b = 0; select = 0;

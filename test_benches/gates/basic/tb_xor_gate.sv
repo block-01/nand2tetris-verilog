@@ -1,11 +1,11 @@
-module tb_or_gate();
+module tb_xor_gate();
 
     reg a;
     reg b;
 
     wire out;
 
-    or_gate uut(
+    xor_gate uut(
             .a(a),
             .b(b),
             .out(out)
@@ -13,14 +13,14 @@ module tb_or_gate();
 
     initial begin
 
-        $dumpfile("build/gates/waveforms/or-waveform.vcd");
-        $dumpvars(0, tb_or_gate);
+        $dumpfile("build/gates/basic/waveforms/xor-waveform.vcd");
+        $dumpvars(0, tb_xor_gate);
 
         a = 0;
         b = 0;
         #10
         if (out == 0) begin
-            $display("or(0,0) Test Passes!");
+            $display("xor(0,0) Test Passes!");
         end
         else begin
             $error("Test Failed!");
@@ -29,8 +29,8 @@ module tb_or_gate();
         a = 1;
         b = 1;
         #10
-        if (out == 1) begin
-            $display("or(1,1) Test Passes!");
+        if (out == 0) begin
+            $display("xor(1,1) Test Passes!");
         end
         else begin
             $error("Test Failed!");
@@ -40,7 +40,7 @@ module tb_or_gate();
         b = 0;
         #10
         if (out == 1) begin
-            $display("or(1,0) Test Passes!");
+            $display("xor(1,0) Test Passes!");
         end
         else begin
             $error("Test Failed!");
@@ -50,7 +50,7 @@ module tb_or_gate();
         b = 1;
         #10
         if (out == 1) begin
-            $display("or(0,1) Test Passes!");
+            $display("xor(0,1) Test Passes!");
         end
         else begin
             $error("Test Failed!");
