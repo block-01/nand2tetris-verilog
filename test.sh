@@ -19,6 +19,7 @@ echo "--------------------------------------------------------"
 obj_dir/Vram
 
 echo ""
+
 echo "Testing PC:"
 verilator --binary --timing --main -j --trace -Wno-fatal -Wall  --cc hack/pc.sv test_benches/tb_pc.sv
 echo "--------------------------------------------------------"
