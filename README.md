@@ -1,6 +1,6 @@
-# Nand2Tetris in Verilog
+# Nand2Tetris in System Verilog
 
-This repository contains my adventures (and possible miss-adventures) with going through [Nand2Tetris](https://www.nand2tetris.org/) but instead of using the provided HDL and tools I instead decided to use System Verilog so that I can learn more about it with the intention of running it on an FPGA along with it's own software stack.
+This repository contains my adventures (and possible miss-adventures) with going through [Nand2Tetris](https://www.nand2tetris.org/) but instead of using the provided RTL and tools I instead decided to use System Verilog so that I can learn more about it with the intention of running it on an FPGA along with it's own software stack.
 
 This all results (hopefully) in a fully working 16-bit soft CPU that uses the [HACK Architecture](https://en.wikipedia.org/wiki/Hack_computer).
 
