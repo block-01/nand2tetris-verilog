@@ -37,3 +37,25 @@ Each section of the soft core from the CPUs ALU, PC and Registers down to the in
 These simulate each component to ensure that they function as expected based off a series of inputs.
 
 Tests can be executed by running the script `test.sh`. This will build and run all of the chips and their associated testbenches within the project outputting `.vcd` waveform files within the `build` directory.
+
+### Plan
+
+- [ ] Hardware
+  - [x] Implement the Basic Logic Gates required to build the CPU and other Components.
+  - [ ] Build the CPU
+    - [ ] ALU
+    - [ ] PC
+    - [ ] ROM
+    - [ ] RAM
+    - [ ] I/O
+      - [ ] Display
+      - [ ] Keyboard
+  - [ ] Improvements
+    - [ ] Improve testing with Formal Verification using [SymbiYosys](https://github.com/YosysHQ/sby).
+    - [ ] Improve the Building Environment for the Project.
+    - [ ] Documentation.
+    - [ ] Unify Input and Output Wire names and merge Inputs/Outputs into single multi bit wires.
+  - [ ] Optional (need some research and "bolting on" to the Architecture as they aren't included in the HACK Spec)
+    - [ ] Serial (FPGA)
+    - [ ] HDMI (FPGA)
+    - [ ] USB (FPGA)
