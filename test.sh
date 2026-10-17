@@ -6,7 +6,9 @@ build/gates/basic/waveforms \
 build/gates/16-bit \
 build/gates/16-bit/waveforms \
 build/gates/multi-way \
-build/gates/multi-way/waveforms
+build/gates/multi-way/waveforms \
+build/cpu \
+build/cpu/waveforms
 
 echo "-----------"
 echo "Basic Gates"
@@ -126,3 +128,13 @@ echo ""
 echo "Testing 8-way OR gate:"
 iverilog  -D GENERATE_VCD -o build/gates/multi-way/or8way hack/gates/basic/or_gate.sv hack/gates/multi-way/or8way_gate.sv test_benches/gates/multi-way/tb_or8way_gate.sv
 vvp build/gates/multi-way/or8way
+
+echo ""
+echo "----"
+echo "CPU:"
+echo "----"
+
+echo ""
+echo "Testing ALU:"
+iverilog -D GENERATE_VCD -o build/cpu/alu hack/cpu/alu.sv test_benches/cpu/tb_alu.sv
+vvp build/cpu/alu
