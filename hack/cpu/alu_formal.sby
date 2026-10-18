@@ -1,0 +1,17 @@
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+depth 10
+
+[engines]
+smtbmc
+
+[script]
+read -formal -sv alu_formal.sv
+prep -top alu_formal
+
+[files]
+alu_formal.sv
+alu.sv
