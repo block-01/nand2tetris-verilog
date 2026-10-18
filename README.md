@@ -46,7 +46,7 @@ Tests can be executed by running the script `test.sh`. This will build and run a
     - [x] ALU
     - [ ] PC
     - [ ] ROM
-    - [ ] RAM
+    - [x] RAM
     - [ ] I/O
       - [ ] Display
       - [ ] Keyboard
