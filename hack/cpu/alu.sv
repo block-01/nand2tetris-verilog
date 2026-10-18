@@ -4,9 +4,9 @@
 module alu(
     input wire [15:0] a,            // 16-bit input A.
     input wire [15:0] b,            // 16-bit input B.
+    input wire clk,                 // The current clock value of the CPU.
     input wire [5:0] op_code,       // 6 Bit OP Code for controlling the function of the ALU.
-                                        -------------
-                                        
+                                    /*
 
                                         *-------*-------------*---*---*---*---*---*---*
                                         | INDEX | INSTRUCTION | 0 | 1 | 2 | 3 | 4 | 5 |
@@ -69,7 +69,7 @@ module alu(
         .out(out_b_not)
     );
 
-    always @(*)
+    always @(posedge clk)
         begin
             case (op_code)
                 6'b101010: out_temp = 16'b0000000000000000;
@@ -105,7 +105,7 @@ module alu(
                 ng_temp = 0;
             end
         end
-    
+
     assign out = out_temp;
     assign zr = zr_temp;
     assign ng = ng_temp;
