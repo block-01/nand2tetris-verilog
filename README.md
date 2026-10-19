@@ -44,7 +44,7 @@ Tests can be executed by running the script `test.sh`. This will build and run a
   - [x] Implement the Basic Logic Gates required to build the CPU and other Components.
   - [ ] Build the CPU
     - [x] ALU
-    - [ ] PC
+    - [x] PC
     - [ ] ROM
     - [x] RAM
     - [ ] I/O
