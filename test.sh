@@ -116,7 +116,7 @@ vvp build/gates/multi-way/mux16_8way
 
 echo ""
 echo "Testing 4-way DEMUX gate:"
-iverilog  -D GENERATE_VCD -o build/gates/multi-way/demux_4way hack/gates/multi-way/demux_4way_gate.sv test_benches/gates/multi-way/tb_demux_4way_gate.sv 
+iverilog  -D GENERATE_VCD -o build/gates/multi-way/demux_4way hack/gates/multi-way/demux_4way_gate.sv test_benches/gates/multi-way/tb_demux_4way_gate.sv
 vvp build/gates/multi-way/demux_4way
 
 echo ""
@@ -138,3 +138,9 @@ echo ""
 echo "Testing ALU:"
 iverilog -D GENERATE_VCD -o build/cpu/alu hack/cpu/alu.sv test_benches/cpu/tb_alu.sv
 vvp build/cpu/alu
+
+echo ""
+echo "Testing RAM:"
+verilator --binary --timing --main -j --trace -Wno-fatal -Wall  --cc hack/cpu/ram.sv test_benches/cpu/tb_ram.sv
+echo "--------------------------------------------------------"
+obj_dir/Vram
