@@ -72,37 +72,37 @@ module alu(
     always @(posedge clk)
         begin
             case (op_code)
-                6'b101010: out_temp = 16'b0000000000000000;
-                6'b111111: out_temp = 16'b1111111111111111;
-                6'b111010: out_temp = -1'b1;
-                6'b001100: out_temp = a;
-                6'b110000: out_temp = b;
-                6'b001101: out_temp = out_a_not;
-                6'b110001: out_temp = out_b_not;
-                6'b001111: out_temp = -a;
-                6'b110011: out_temp = -b;
-                6'b011111: out_temp = a + 16'b0000000000000001;
-                6'b110111: out_temp = b + 16'b0000000000000001;
-                6'b001110: out_temp = a - 16'b0000000000000001;
-                6'b110010: out_temp = b - 16'b0000000000000001;
-                6'b000010: out_temp = a + b;
-                6'b010011: out_temp = a - b;
-                6'b000111: out_temp = b - a;
-                6'b000000: out_temp = a & b;
-                6'b010101: out_temp = a | b;
-                default: out_temp = 16'b0000000000000000;
+                6'b101010: out_temp <= 16'b0000000000000000;
+                6'b111111: out_temp <= 16'b1111111111111111;
+                6'b111010: out_temp <= -1'b1;
+                6'b001100: out_temp <= a;
+                6'b110000: out_temp <= b;
+                6'b001101: out_temp <= out_a_not;
+                6'b110001: out_temp <= out_b_not;
+                6'b001111: out_temp <= -a;
+                6'b110011: out_temp <= -b;
+                6'b011111: out_temp <= a + 16'b0000000000000001;
+                6'b110111: out_temp <= b + 16'b0000000000000001;
+                6'b001110: out_temp <= a - 16'b0000000000000001;
+                6'b110010: out_temp <= b - 16'b0000000000000001;
+                6'b000010: out_temp <= a + b;
+                6'b010011: out_temp <= a - b;
+                6'b000111: out_temp <= b - a;
+                6'b000000: out_temp <= a & b;
+                6'b010101: out_temp <= a | b;
+                default: out_temp <= 16'b0000000000000000;
             endcase
 
             if (out_temp == 16'b000000000000000) begin
-                zr_temp = 1;
+                zr_temp <= 1;
             end else begin
-                zr_temp = 0;
+                zr_temp <= 0;
             end
 
             if (out_temp << 16'b0000000000000000) begin
-                ng_temp = 1;
+                ng_temp <= 1;
             end else begin
-                ng_temp = 0;
+                ng_temp <= 0;
             end
         end
 

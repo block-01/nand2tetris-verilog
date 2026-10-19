@@ -6,6 +6,8 @@ module tb_pc();
 
     integer i;
 
+    wire debug = 0; // Set to 1 to activate MONITOR debug output.
+
     pc pc(
         .in(in),
         .op_code(op_code),
@@ -16,8 +18,12 @@ module tb_pc();
     always #5 clk = ~clk;
 
     initial begin
-        $dumpfile("build/cpu/waveforms/pc-waveform.vcd");
+        $dumpfile("build/waveforms/pc-waveform.vcd");
         $dumpvars(0, tb_pc);
+
+        if (debug == 1) begin
+            $monitor("[$monitor] time=%0t, OPCODE= %b\t|\tOUTPUT= b%b", $time, op_code, out);
+        end
 
         repeat (1) @ (posedge clk);
 
