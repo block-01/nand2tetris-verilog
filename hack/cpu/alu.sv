@@ -57,18 +57,6 @@ module alu(
     reg zr_temp;
     reg ng_temp;
 
-    wire [15:0] out_a_not;
-    not16_gate a_not16(
-        .in(a),
-        .out(out_a_not)
-    );
-
-    wire [15:0] out_b_not;
-    not16_gate b_not16(
-        .in(b),
-        .out(out_b_not)
-    );
-
     always @(posedge clk)
         begin
             case (op_code)
@@ -77,8 +65,42 @@ module alu(
                 6'b111010: out_temp <= -1'b1;
                 6'b001100: out_temp <= a;
                 6'b110000: out_temp <= b;
-                6'b001101: out_temp <= out_a_not;
-                6'b110001: out_temp <= out_b_not;
+                6'b001101: begin
+                        out_temp[0] <= !a[0];
+                        out_temp[1] <= !a[1];
+                        out_temp[2] <= !a[2];
+                        out_temp[3] <= !a[3];
+                        out_temp[4] <= !a[4];
+                        out_temp[5] <= !a[5];
+                        out_temp[6] <= !a[6];
+                        out_temp[7] <= !a[7];
+                        out_temp[8] <= !a[8];
+                        out_temp[9] <= !a[9];
+                        out_temp[10] <= !a[10];
+                        out_temp[11] <= !a[11];
+                        out_temp[12] <= !a[12];
+                        out_temp[13] <= !a[13];
+                        out_temp[14] <= !a[14];
+                        out_temp[15] <= !a[15];
+                    end
+                6'b110001: begin
+                        out_temp[0] <= !b[0];
+                        out_temp[1] <= !b[1];
+                        out_temp[2] <= !b[2];
+                        out_temp[3] <= !b[3];
+                        out_temp[4] <= !b[4];
+                        out_temp[5] <= !b[5];
+                        out_temp[6] <= !b[6];
+                        out_temp[7] <= !b[7];
+                        out_temp[8] <= !b[8];
+                        out_temp[9] <= !b[9];
+                        out_temp[10] <= !b[10];
+                        out_temp[11] <= !b[11];
+                        out_temp[12] <= !b[12];
+                        out_temp[13] <= !b[13];
+                        out_temp[14] <= !b[14];
+                        out_temp[15] <= !b[15];
+                    end
                 6'b001111: out_temp <= -a;
                 6'b110011: out_temp <= -b;
                 6'b011111: out_temp <= a + 16'b0000000000000001;
@@ -112,28 +134,3 @@ module alu(
 
 endmodule
 `endif
-
-module not16_gate(
-    input wire [15:0] in,       // Input wire of IN[i].
-
-    output wire [15:0] out      // Output wire of ¬IN[i].
-);
-
-        assign out[0]= !in[0];
-        assign out[1]= !in[1];
-        assign out[2]= !in[2];
-        assign out[3]= !in[3];
-        assign out[4]= !in[4];
-        assign out[5]= !in[5];
-        assign out[6]= !in[6];
-        assign out[7]= !in[7];
-        assign out[8]= !in[8];
-        assign out[9]= !in[9];
-        assign out[10]= !in[10];
-        assign out[11]= !in[11];
-        assign out[12]= !in[12];
-        assign out[13]= !in[13];
-        assign out[14]= !in[14];
-        assign out[15]= !in[15];
-
-endmodule
