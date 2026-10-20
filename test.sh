@@ -8,7 +8,7 @@ echo "----"
 
 echo ""
 echo "Testing ALU:"
-verilator --binary --timing --main -j --trace -Wno-fatal -Wall  --cc hack/alu.sv test_benches/tb_alu.sv
+verilator --binary --timing --main -j --trace -Wno-fatal -Wall  --cc hack/cpu/alu.sv test_benches/cpu/tb_alu.sv
 
 obj_dir/Valu
 
@@ -20,6 +20,6 @@ obj_dir/Vram
 
 echo ""
 echo "Testing PC:"
-verilator --binary --timing --main -j --trace -Wno-fatal -Wall  --cc hack/pc.sv test_benches/tb_pc.sv
+verilator --binary --timing --main -j --trace -Wno-fatal -Wall  --cc hack/cpu/pc.sv test_benches/cpu/tb_pc.sv
 echo "--------------------------------------------------------"
 obj_dir/Vpc
