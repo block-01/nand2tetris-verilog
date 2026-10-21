@@ -41,14 +41,14 @@ Tests can be executed by running the script `test.sh`. This will build and run a
 ### Plan
 
 - [ ] Hardware
-  - [ ] Build the CPU
+  - [x] Build the CPU
     - [x] ALU
     - [x] PC
-    - [ ] ROM
-    - [x] RAM
-    - [ ] I/O
-      - [ ] Display
-      - [ ] Keyboard
+  - [ ] ROM
+  - [x] RAM
+  - [ ] I/O
+    - [ ] Display
+    - [ ] Keyboard
   - [ ] Improvements
     - [ ] Improve testing with Formal Verification using [SymbiYosys](https://github.com/YosysHQ/sby).
     - [ ] Improve the Building Environment for the Project.
